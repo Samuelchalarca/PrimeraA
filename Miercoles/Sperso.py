@@ -1,0 +1,26 @@
+from tkinter import *
+
+def saludar():
+    print("hola "+nombre.get()+" "+ apellido.get()+" "+ apellido2.get())
+
+ventana = Tk()
+nombre = StringVar()
+apellido = StringVar()
+apellido2 = StringVar()
+edad = IntVar()
+sexo =BooleanVar()
+nombre.set("Escribe tu nombre")
+ventana.title("Entradas en tkinter")
+ventana.geometry("400x400")
+etiqueta1 =Label (ventana, text="Escribe tu nombre: ").place(x=10, y=10)
+nombreCaja =Entry(ventana, textvariable=nombre).place(x=170, y=10)
+etiqueta2 =Label (ventana, text="Escribe tu primer apellido: ").place(x=10, y=40)
+apellidoCaja =Entry(ventana, textvariable=apellido).place(x=170, y=40)
+etiqueta3 =Label(ventana, text="Escribe tu segundo apellido: ").place(x=10, y=70)
+apellido2Caja =Entry(ventana, textvariable=apellido2).place(x=170, y=70)
+etiqueta4 =Label(ventana, text="edad: ").place(x=10, y=100)
+edadCaja =Entry(ventana, textvariable=edad).place(x=50, y=100)
+etiqueta5 =Label(ventana, text="sexo: ").place(x=10, y=130)
+sexoCaja =Entry(ventana, textvariable=sexo).place(x=50, y=130)
+boton = Button(ventana, text="saludo personalizado ", command=saludar).place(x=10, y=160)
+ventana.mainloop()
